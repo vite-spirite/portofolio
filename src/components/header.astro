@@ -1,0 +1,12 @@
+---
+interface Props {
+    reverse?: boolean;
+}
+
+const {reverse} = Astro.props;
+---
+
+<section class:list={["w-full flex flex-row justify-between items-center px-8 py-4 border border-neutral-100/10", {"border-t-0": !reverse}, {"border-b-0": reverse}]}>
+    <slot name="left"></slot>
+    <slot name="right"></slot>
+</section>

@@ -1,0 +1,52 @@
+---
+import BaseHeader from '../components/header.astro';
+import Circle from '../components/circle.astro';
+import Button from '../components/button.astro';
+
+const {title} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Mathéo Boulanger - {title}</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3&family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    </head>
+
+    <body class="bg-neutral-900 text-neutral-200 font-body max-w-screen overflow-x-hidden">
+        <Circle positionClass={['top-[-250px]', 'left-[-250px]']} colorClass='bg-indigo-500'></Circle>
+        <Circle positionClass={['top-[-250px]', 'right-[-250px]']} colorClass='bg-fuchsia-500'></Circle>
+        <div class="min-h-screen w-[1024px] m-auto flex flex-col justify-start items-center">
+            <BaseHeader :reverse="false">
+
+                <h1 slot="left" class="text-neutral-300">boulangermatheo62@gmail.com</h1>
+                <div slot="right" class="flex flex-row justify-center items-start">
+                    <Button title='GitHub' url="http://github.com/"/>
+                </div>
+            </BaseHeader>
+
+            <div class="hero flex flex-col justify-center items-start space-y-3 border-l border-r border-neutral-100/10 p-32">
+                <h1 class="font-title font-bold text-6xl text-neutral-200">Mathéo Boulanger</h1>
+                <p class="text-neutral-300 font-body w-3/4 text-xl">
+                    Développeur auto-didacte depuis plusieurs années, les technologies les plus fréquemment utiliser sont <strong class="text-indigo-500 font-normal">NestJS</strong> pour la partie serveur ainsi que <strong class="text-indigo-500 font-normal">NuxtJS</strong> pour la partie client.
+                </p>
+            </div>
+
+            <div class="hero p-32 border-l border-r border-t border-neutral-100/10 w-full flex-1">
+                <slot />
+            </div>
+
+            <BaseHeader reverse={true}>
+
+                <h1 slot="left" class="text-neutral-300">boulangermatheo62@gmail.com</h1>
+                <div slot="right" class="flex flex-row justify-center items-start">
+                    <p><strong class="text-indigo-500">&copy;</strong> - <strong class="text-indigo-500">Mathéo Boulanger</strong></p>
+                </div>
+            </BaseHeader>
+        </div>
+    </body>
+</html>
