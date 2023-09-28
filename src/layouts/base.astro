@@ -3,7 +3,13 @@ import BaseHeader from '../components/header.astro';
 import Circle from '../components/circle.astro';
 import Button from '../components/button.astro';
 
-const {title} = Astro.props;
+interface Props {
+    title: string;
+    description: string;
+
+}
+
+const {title, description} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -15,6 +21,23 @@ const {title} = Astro.props;
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3&family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+        <meta name=" robots" content=" index, follow">
+
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={`Mathéo boulanger - ${title}`} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="https://matheoboulanger.netlify.app/seo.png" />
+        <meta property="og:url" content="https://matheoboulanger.netlify.app/" />
+        <meta property="og:title" content={`Mathéo boulanger - ${title}`} />
+
+        <meta name="twitter:title" content={`Mathéo boulanger - ${title}`}>
+        <meta name="twitter:description" content={description}>
+        <meta name="twitter:image" content="https://matheoboulanger.netlify.app/seo.png">
+        <meta name="twitter:site" content="@ViteSpirite">
+        <meta name="twitter:creator" content="@ViteSpirite">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
 
     <body class="bg-neutral-900 text-neutral-200 font-body max-w-screen overflow-x-hidden">
@@ -60,7 +83,6 @@ const {title} = Astro.props;
             </div>
 
             <BaseHeader reverse={true}>
-
                 <h1 slot="left" class="text-neutral-300">boulangermatheo62@gmail.com</h1>
                 <div slot="right" class="flex flex-row justify-center items-start">
                     <p><strong class="text-indigo-500">&copy;</strong> - <strong class="text-indigo-500">Mathéo Boulanger</strong></p>

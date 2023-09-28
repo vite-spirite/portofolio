@@ -16,9 +16,10 @@ const {slug} = Astro.params;
 const {project} = Astro.props;
 
 const {Content} = await project.render();
+export const prerender = true;
 ---
 
-<BaseLayout title={project.data.tile}>
+<BaseLayout title={project.data.title} description={project.data.description}>
     <div class='flex flex-row justify-between items-center'>
         <h1 class="text-5xl text-neutral-200 font-title font-bold">{project.data.title}</h1>
         {project.data.url && <Button title="Voir sur github" url={project.data.url}/>}
