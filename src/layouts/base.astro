@@ -24,7 +24,8 @@ const {title} = Astro.props;
             <BaseHeader :reverse="false">
 
                 <h1 slot="left" class="text-neutral-300">boulangermatheo62@gmail.com</h1>
-                <div slot="right" class="flex flex-row justify-center items-start">
+                <div slot="right" class="flex flex-row justify-center items-start gap-3">
+                    <Button title='Accueil' url="/"/>
                     <Button title='GitHub' url="http://github.com/"/>
                 </div>
             </BaseHeader>
@@ -34,6 +35,24 @@ const {title} = Astro.props;
                 <p class="text-neutral-300 font-body w-3/4 text-xl">
                     Développeur auto-didacte depuis plusieurs années, les technologies les plus fréquemment utiliser sont <strong class="text-indigo-500 font-normal">NestJS</strong> pour la partie serveur ainsi que <strong class="text-indigo-500 font-normal">NuxtJS</strong> pour la partie client.
                 </p>
+                <div class="flex flex-row justify-start items-center flex-wrap gap-3">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black" alt="Javascript">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white" alt="Typescript">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" alt="html">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white" alt="css">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white" alt="tailwind">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Node.js-339933.svg?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="node.js">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/NestJS-E0234E.svg?style=for-the-badge&logo=NestJS&logoColor=white" alt="nests">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Nuxt.js-00DC82.svg?style=for-the-badge&logo=nuxtdotjs&logoColor=white" alt="nuxtjs">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Vue.js-4FC08D.svg?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="vuejs">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Astro-BC52EE.svg?style=for-the-badge&logo=Astro&logoColor=white" alt="astro">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/PostgreSQL-4169E1.svg?style=for-the-badge&logo=PostgreSQL&logoColor=white" alt="postgresql">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/MySQL-4479A1.svg?style=for-the-badge&logo=MySQL&logoColor=white" alt="mysql">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Prisma-2D3748.svg?style=for-the-badge&logo=Prisma&logoColor=white" alt="prisma">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Sequelize-52B0E7.svg?style=for-the-badge&logo=Sequelize&logoColor=white" alt="Sequelize">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Typeorm-52B0E7.svg?style=for-the-badge&logo=Typeorm&logoColor=white" alt="Typeorm">
+                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white" alt="Docker">
+                </div>
             </div>
 
             <div class="hero p-32 border-l border-r border-t border-neutral-100/10 w-full flex-1">

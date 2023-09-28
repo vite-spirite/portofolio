@@ -1,0 +1,35 @@
+---
+import {getCollection} from 'astro:content';
+import BaseLayout from '../../layouts/base.astro';
+import Button from '../../components/button.astro';
+
+export async function getStaticPaths() {
+    const projects = await getCollection('projects');
+
+    return projects.map(project => ({
+        params: {slug: project.slug},
+        props: {project}
+    }));
+}
+
+const {slug} = Astro.params;
+const {project} = Astro.props;
+
+const {Content} = await project.render();
+---
+
+<BaseLayout title={project.data.tile}>
+    <div class='flex flex-row justify-between items-center'>
+        <h1 class="text-5xl text-neutral-200 font-title font-bold">{project.data.title}</h1>
+        {project.data.url && <Button title="Voir sur github" url={project.data.url}/>}
+    </div>
+    <div class="prose prose-xl prose-neutral prose-invert prose-a:text-indigo-500 max-w-none prose-headings:text-neutral-200 propse-p:text-neutral-300 prose-p:font-body prose-headings:font-title">
+        <Content/>
+    </div>
+    <h2 class="text-5xl text-neutral-200 font-title font-bold">Technologies utilisées</h2>
+    <div class="flex flex-row justify-start items-center gap-3 flex-wrap pt-6">
+        {project.data.tags.map(tag => (
+            <img src={tag.url} alt={tag.alt}/>
+        ))}
+    </div>
+</BaseLayout>

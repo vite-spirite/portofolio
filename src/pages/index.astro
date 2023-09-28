@@ -1,7 +1,20 @@
 ---
 import Layout from '../layouts/base.astro'
+import ProjectCard from '../components/mini-project.astro'
+import {getCollection} from 'astro:content';
+
+const projects = await getCollection('projects');
+
+projects.sort((a, b) => {
+	return new Date(b.data.createdAt) - new Date(a.data.createdAt);
+});
 ---
 
 <Layout title="Accueil">
-  <h1 class="font-title font-bold text-8xl">Hello world!</h1>
+	<div class="flex flex-col justify-start items-start space-y-5">
+		<h2 class="text-5xl font-bold font-title">Mes projets</h2>
+		{projects.map((project) => (
+			<ProjectCard title={project.data.title} description={project.data.description} tags={project.data.tags} createdAt={project.data.createdAt} slug={project.data.slug}/>
+		))}
+	</div>
 </Layout>
