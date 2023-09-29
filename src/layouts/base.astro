@@ -40,15 +40,18 @@ const {title, description} = Astro.props;
         <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
 
-    <body class="dark:bg-neutral-900 dark:text-neutral-200 bg-neutral-200 text-neutral-700 font-body max-w-screen overflow-x-hidden transition-all duration-800">
-        <Circle positionClass={['top-[-250px]', 'left-[-250px]']} colorClass='bg-indigo-500'></Circle>
-        <Circle positionClass={['top-[-250px]', 'right-[-250px]']} colorClass='bg-fuchsia-500'></Circle>
+    <body class="dark:bg-neutral-900 dark:text-neutral-200 bg-neutral-200 text-neutral-700 font-body overflow-x-hidden transition-all duration-800 w-full max-w-screen">
+        <div class="absolute top-0 left-0 right-0 bottom-0 overflow-hidden">
+            <Circle positionClass={['top-[-250px]', 'left-[-250px]']} colorClass='bg-indigo-500'></Circle>
+            <Circle positionClass={['top-[-250px]', 'right-[-250px]']} colorClass='bg-fuchsia-500'></Circle>
+        </div>
+        
 
-        <div class="min-h-screen w-[1024px] m-auto flex flex-col justify-start items-center">
+        <div class="min-h-screen w-screen md:w-[1024px] m-auto flex flex-col justify-start items-center relative">
             <BaseHeader :reverse="false">
 
                 <h1 slot="left" class="dark:text-neutral-300 text-neutral-800">boulangermatheo62@gmail.com</h1>
-                <div slot="right" class="flex flex-row justify-center items-start gap-3">
+                <div slot="right" class="w-full flex flex-row justify-center items-center md:items-start flex-wrap gap-3">
                     <Button title='Accueil' url="/"/>
                     <Button title='Contact' url="/contact"/>
                     <Button title='GitHub' url="https://github.com/vite-spirite"/>
@@ -60,7 +63,7 @@ const {title, description} = Astro.props;
                 </div>
             </BaseHeader>
 
-            <div class="hero flex flex-col justify-center items-start space-y-3 border-l border-r dark:border-neutral-100/10 border-neutral-900/10 p-32">
+            <div class="hero flex flex-col justify-center items-start space-y-3 md:border-l md:border-r dark:border-neutral-100/10 border-neutral-900/10 p-8 md:p-32">
                 <h1 class="font-title font-bold text-6xl dark:text-neutral-200 text-neutral-800">Mathéo Boulanger</h1>
                 <p class="dark:text-neutral-300 text-neutral-700 font-body w-3/4 text-xl">
                     Développeur auto-didacte depuis plusieurs années, les technologies les plus fréquemment utiliser sont <strong class="text-indigo-500 font-normal">NestJS</strong> pour la partie serveur ainsi que <strong class="text-indigo-500 font-normal">NuxtJS</strong> pour la partie client.
@@ -85,7 +88,7 @@ const {title, description} = Astro.props;
                 </div>
             </div>
 
-            <div class="hero p-32 border-l border-r border-t dark:border-neutral-100/10 border-neutral-900/10 w-full flex-1">
+            <div class="hero p-8 md:p-32 md:border-l md:border-r border-t dark:border-neutral-100/10 border-neutral-900/10 w-full flex-1">
                 <slot />
             </div>
 

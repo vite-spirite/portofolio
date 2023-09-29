@@ -14,4 +14,18 @@ const projects = defineCollection({
     })
 });
 
-export const collection = {projects}
+const frontendMentor = defineCollection({
+    schema: z.object({
+        title: z.string(),
+        preview: z.string(),
+        live: z.string(),
+        github: z.string(),
+        frontendMentor: z.string(),
+        tags: z.object({
+            url: z.string(),
+            alt: z.string(),
+        }),
+    })
+})
+
+export const collection = {projects, frontendMentor}

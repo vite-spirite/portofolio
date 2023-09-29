@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+    item: CollectionEntry<'frontendMentor'>
+}
+
+const {
+    title,
+    preview,
+    description,
+    live,
+    github,
+    frontendMentor,
+    tags
+} = Astro.props.item.data;
+
+const {Content} = await Astro.props.item.render();
+---
+
+<div class="card w-full dark:bg-neutral-200/10 bg-neutral-100 shadow-lg rounded-lg p-4 flex flex-col justify-start items-start">
+    <img src={preview} alt={title} class="w-full rounded-lg mb-4" />
+
+    <h2 class="text-2xl font-title font-bold text-neutral-900 dark:text-neutral-100 mb-2">{title}</h2>
+    <div class="prose prose-neutral prose-invert prose-a:text-indigo-500 max-w-none dark:prose-headings:text-neutral-200 prose-headings:text-neutral-800 dark:prose-p:text-neutral-300 prose-p:text-neutral-700 prose-strong:text-neutral-800 dark:prose-strong:text-neutral-200 prose-p:font-body prose-headings:font-title">
+        <Content />
+    </div>
+    <div class="flex flex-row flex-wrap justify-start items-center mt-4 gap-2">
+        {tags.map((tag: {url: string, alt: string}) => (
+            <img src={tag.url} alt={tag.alt}/>
+        ))}
+    </div>
+
+    <div class="mt-4 w-full flex flex-row justify-between items-center">
+        <a class="text-indigo-500 font-semibold bg-transparent hover:bg-indigo-500/10 p-2 rounded-md transition-all duration-300" target="_blank" href={live}>Démo</a>
+        <a class="text-indigo-500 font-semibold bg-transparent hover:bg-indigo-500/10 p-2 rounded-md transition-all duration-300" target="_blank" href={github}>Code source</a>
+    </div>
+</div>

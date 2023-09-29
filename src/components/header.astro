@@ -6,7 +6,7 @@ interface Props {
 const {reverse} = Astro.props;
 ---
 
-<section class:list={["w-full flex flex-row justify-between items-center px-8 py-4 border dark:border-neutral-100/10 border-neutral-900/10", {"border-t-0": !reverse}, {"border-b-0": reverse}]}>
+<section class:list={["w-full flex justify-center md:justify-between items-center px-4 md:px-8 py-4 md:border dark:border-neutral-100/10 border-neutral-900/10 flex-wrap md:flex-nowrap", {"md:border-t-0": !reverse}, {"md:border-b-0": reverse}]}>
     <slot name="left"></slot>
     <slot name="right"></slot>
 </section>
