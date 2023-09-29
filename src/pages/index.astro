@@ -12,7 +12,7 @@ projects.sort((a, b) => {
 
 <Layout title="Accueil" description='Développeur auto-didacte depuis plusieurs années, les technologies les plus fréquemment utiliser sont NestJS pour la partie serveur ainsi que NuxtJS pour la partie client.'>
 	<div class="flex flex-col justify-start items-start space-y-5">
-		<h2 class="text-5xl font-bold font-title">Mes projets</h2>
+		<h2 class="text-5xl font-bold font-title dark:text-neutral-200 text-neutral-800">Mes projets</h2>
 		{projects.map((project) => (
 			<ProjectCard title={project.data.title} description={project.data.description} tags={project.data.tags} createdAt={project.data.createdAt} slug={project.data.slug}/>
 		))}

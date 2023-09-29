@@ -21,10 +21,10 @@ export const prerender = true;
 
 <BaseLayout title={project.data.title} description={project.data.description}>
     <div class='flex flex-row justify-between items-center'>
-        <h1 class="text-5xl text-neutral-200 font-title font-bold">{project.data.title}</h1>
+        <h1 class="text-5xl dark:text-neutral-200 text-neutral-800 font-title font-bold">{project.data.title}</h1>
         {project.data.url && <Button title="Voir sur github" url={project.data.url}/>}
     </div>
-    <div class="prose prose-xl prose-neutral prose-invert prose-a:text-indigo-500 max-w-none prose-headings:text-neutral-200 propse-p:text-neutral-300 prose-p:font-body prose-headings:font-title">
+    <div class="prose prose-xl prose-neutral prose-invert prose-a:text-indigo-500 max-w-none dark:prose-headings:text-neutral-200 prose-headings:text-neutral-800 dark:prose-p:text-neutral-300 prose-p:text-neutral-700 prose-strong:text-neutral-800 dark:prose-strong:text-neutral-200 prose-p:font-body prose-headings:font-title">
         <Content/>
     </div>
     <h2 class="text-5xl text-neutral-200 font-title font-bold">Technologies utilisées</h2>

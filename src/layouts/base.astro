@@ -40,22 +40,28 @@ const {title, description} = Astro.props;
         <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
 
-    <body class="bg-neutral-900 text-neutral-200 font-body max-w-screen overflow-x-hidden">
+    <body class="dark:bg-neutral-900 dark:text-neutral-200 bg-neutral-200 text-neutral-700 font-body max-w-screen overflow-x-hidden transition-all duration-800">
         <Circle positionClass={['top-[-250px]', 'left-[-250px]']} colorClass='bg-indigo-500'></Circle>
         <Circle positionClass={['top-[-250px]', 'right-[-250px]']} colorClass='bg-fuchsia-500'></Circle>
+
         <div class="min-h-screen w-[1024px] m-auto flex flex-col justify-start items-center">
             <BaseHeader :reverse="false">
 
-                <h1 slot="left" class="text-neutral-300">boulangermatheo62@gmail.com</h1>
+                <h1 slot="left" class="dark:text-neutral-300 text-neutral-800">boulangermatheo62@gmail.com</h1>
                 <div slot="right" class="flex flex-row justify-center items-start gap-3">
                     <Button title='Accueil' url="/"/>
-                    <Button title='GitHub' url="http://github.com/"/>
+                    <Button title='GitHub' url="https://github.com/vite-spirite"/>
+
+                    <button class="bg-neutral-800/10 border-neutral-800/25 hover:bg-neutral-800/5 dark:text-neutral-800 dark:bg-neutral-200/10 dark:border-neutral-200/25 dark:hover:bg-neutral-200/5 dark:text-neutral-200 px-4 py-2 border font-body rounded-lg font-semibold text-lg cursor-pointer transition-all duration-100" id="themeToggleBtn">
+                        <span class="hidden dark:inline">🌞</span>
+                        <span class="dark:hidden">🌙</span>
+                    </button>
                 </div>
             </BaseHeader>
 
-            <div class="hero flex flex-col justify-center items-start space-y-3 border-l border-r border-neutral-100/10 p-32">
-                <h1 class="font-title font-bold text-6xl text-neutral-200">Mathéo Boulanger</h1>
-                <p class="text-neutral-300 font-body w-3/4 text-xl">
+            <div class="hero flex flex-col justify-center items-start space-y-3 border-l border-r dark:border-neutral-100/10 border-neutral-900/10 p-32">
+                <h1 class="font-title font-bold text-6xl dark:text-neutral-200 text-neutral-800">Mathéo Boulanger</h1>
+                <p class="dark:text-neutral-300 text-neutral-700 font-body w-3/4 text-xl">
                     Développeur auto-didacte depuis plusieurs années, les technologies les plus fréquemment utiliser sont <strong class="text-indigo-500 font-normal">NestJS</strong> pour la partie serveur ainsi que <strong class="text-indigo-500 font-normal">NuxtJS</strong> pour la partie client.
                 </p>
                 <div class="flex flex-row justify-start items-center flex-wrap gap-3">
@@ -78,16 +84,49 @@ const {title, description} = Astro.props;
                 </div>
             </div>
 
-            <div class="hero p-32 border-l border-r border-t border-neutral-100/10 w-full flex-1">
+            <div class="hero p-32 border-l border-r border-t dark:border-neutral-100/10 border-neutral-900/10 w-full flex-1">
                 <slot />
             </div>
 
             <BaseHeader reverse={true}>
-                <h1 slot="left" class="text-neutral-300">boulangermatheo62@gmail.com</h1>
+                <h1 slot="left" class="dark:text-neutral-300 text-neutral-800">boulangermatheo62@gmail.com</h1>
                 <div slot="right" class="flex flex-row justify-center items-start">
                     <p><strong class="text-indigo-500">&copy;</strong> - <strong class="text-indigo-500">Mathéo Boulanger</strong></p>
                 </div>
             </BaseHeader>
         </div>
     </body>
+
+    <script defer>
+        if(!localStorage.getItem('theme')) {
+            if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        if(localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+
+        if(localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+        else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
 </html>
