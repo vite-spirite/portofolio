@@ -41,7 +41,7 @@ const {title, description} = Astro.props;
     </head>
 
     <body class="dark:bg-neutral-900 dark:text-neutral-200 bg-neutral-200 text-neutral-700 font-body overflow-x-hidden transition-all duration-800 w-full max-w-screen">
-        <div class="fixed top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
+        <div class="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
             <Circle positionClass={['top-[-250px]', 'left-[-250px]']} colorClass='bg-indigo-500'></Circle>
             <Circle positionClass={['top-[-250px]', 'right-[-250px]']} colorClass='bg-fuchsia-500'></Circle>
         </div>
