@@ -47,7 +47,7 @@ const {title, description} = Astro.props;
         </div>
         
 
-        <div class="min-h-screen w-screen md:w-[1024px] m-auto flex flex-col justify-start items-center relative">
+        <div class="min-h-screen w-screen lg:w-[1024px] m-auto flex flex-col justify-start items-center relative">
             <BaseHeader :reverse="false">
 
                 <h1 slot="left" class="dark:text-neutral-300 text-neutral-800">boulangermatheo62@gmail.com</h1>
@@ -64,9 +64,9 @@ const {title, description} = Astro.props;
             </BaseHeader>
 
             <div class="hero flex flex-col justify-center items-start space-y-3 md:border-l md:border-r dark:border-neutral-100/10 border-neutral-900/10 p-8 md:p-32">
-                <h1 class="font-title font-bold text-6xl dark:text-neutral-200 text-neutral-800">Mathéo Boulanger</h1>
+                <h1 class="font-title font-bold text-6xl dark:text-neutral-200 text-neutral-800 min-h-[60px] min-w-1 block" id="typing_name"></h1>
                 <p class="dark:text-neutral-300 text-neutral-700 font-body w-3/4 text-xl">
-                    Développeur auto-didacte depuis plusieurs années, les technologies les plus fréquemment utiliser sont <strong class="text-indigo-500 font-normal">NestJS</strong> pour la partie serveur ainsi que <strong class="text-indigo-500 font-normal">NuxtJS</strong> pour la partie client.
+                    Développeur autodidacte depuis plusieurs années, les technologies les plus fréquemment utilisées sont <strong class="text-indigo-500 font-normal">NestJS</strong> pour la partie serveur ainsi que <strong class="text-indigo-500 font-normal">NuxtJS</strong> pour la partie client.
                 </p>
                 <div class="flex flex-row justify-start items-center flex-wrap gap-3">
                     <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black" alt="Javascript">
@@ -133,4 +133,52 @@ const {title, description} = Astro.props;
             localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
         });
     </script>
+
+    <script>
+        const el = document.getElementById('typing_name');
+        const typing = 'Mathéo Boulanger';
+        let i = 0;
+        let reverse = false;
+
+        function type() {
+
+            if(i == 0) {
+                reverse = false;
+            }
+            else if(i == typing.length && !reverse) {
+                reverse = true;
+                setTimeout(type, 1000);
+                return;
+            }
+
+            if(reverse) {
+                el.innerHTML = el.innerHTML.slice(0, -1);
+                i--;
+            }
+            else {
+                el.innerHTML += typing.charAt(i);
+                i++;
+            }
+
+            setTimeout(type, 200);
+        }
+
+        type();
+    </script>
 </html>
+
+<style>
+    #typing_name::after {
+        content: '|';
+        animation: blink 0.3s linear infinite alternate;
+    }
+
+    @keyframes blink {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
