@@ -22,12 +22,14 @@ frontend.sort((a, b) => {
 		{projects.map((project) => (
 			<ProjectCard title={project.data.title} description={project.data.description} tags={project.data.tags} createdAt={project.data.createdAt} slug={project.data.slug}/>
 		))}
+	</div>
 
+	<div class="flex flex-col justify-start items-start space-y-5">
 		<h2 class="text-5xl font-bold font-title dark:text-neutral-200 text-neutral-800 pt-8 md:pt-32">Mes projets Frontend Mentor</h2>
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-3 w-full">
 			{frontend.map((frontend) => (
 				<FrontendMentorCard item={frontend}/>
-			))
+			))}
 		</div>
 	</div>
 </Layout>

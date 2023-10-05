@@ -41,13 +41,13 @@ const {title, description} = Astro.props;
     </head>
 
     <body class="dark:bg-neutral-900 dark:text-neutral-200 bg-neutral-200 text-neutral-700 font-body overflow-x-hidden transition-all duration-800 w-full max-w-screen">
-        <div class="absolute top-0 left-0 right-0 bottom-0 overflow-hidden">
+        <div class="fixed top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
             <Circle positionClass={['top-[-250px]', 'left-[-250px]']} colorClass='bg-indigo-500'></Circle>
             <Circle positionClass={['top-[-250px]', 'right-[-250px]']} colorClass='bg-fuchsia-500'></Circle>
         </div>
         
 
-        <div class="min-h-screen w-screen lg:w-[1024px] m-auto flex flex-col justify-start items-center relative">
+        <div class="min-h-screen w-screen lg:w-[1024px] m-auto flex flex-col justify-start items-center relative z-10">
             <BaseHeader :reverse="false">
 
                 <h1 slot="left" class="dark:text-neutral-300 text-neutral-800">boulangermatheo62@gmail.com</h1>
@@ -69,22 +69,22 @@ const {title, description} = Astro.props;
                     Développeur autodidacte depuis plusieurs années, les technologies les plus fréquemment utilisées sont <strong class="text-indigo-500 font-normal">NestJS</strong> pour la partie serveur ainsi que <strong class="text-indigo-500 font-normal">NuxtJS</strong> pour la partie client.
                 </p>
                 <div class="flex flex-row justify-start items-center flex-wrap gap-3">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black" alt="Javascript">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white" alt="Typescript">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" alt="html">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white" alt="css">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white" alt="tailwind">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Node.js-339933.svg?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="node.js">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/NestJS-E0234E.svg?style=for-the-badge&logo=NestJS&logoColor=white" alt="nests">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Nuxt.js-00DC82.svg?style=for-the-badge&logo=nuxtdotjs&logoColor=white" alt="nuxtjs">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Vue.js-4FC08D.svg?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="vuejs">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Astro-BC52EE.svg?style=for-the-badge&logo=Astro&logoColor=white" alt="astro">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/PostgreSQL-4169E1.svg?style=for-the-badge&logo=PostgreSQL&logoColor=white" alt="postgresql">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/MySQL-4479A1.svg?style=for-the-badge&logo=MySQL&logoColor=white" alt="mysql">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Prisma-2D3748.svg?style=for-the-badge&logo=Prisma&logoColor=white" alt="prisma">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Sequelize-52B0E7.svg?style=for-the-badge&logo=Sequelize&logoColor=white" alt="Sequelize">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Typeorm-52B0E7.svg?style=for-the-badge&logo=Typeorm&logoColor=white" alt="Typeorm">
-                    <img class="rounded-md opacity-50 hover:opacity-100 transition-all duration-200" src="https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white" alt="Docker">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black" alt="Javascript">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white" alt="Typescript">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" alt="html">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white" alt="css">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white" alt="tailwind">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/Node.js-339933.svg?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="node.js">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/NestJS-E0234E.svg?style=for-the-badge&logo=NestJS&logoColor=white" alt="nests">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/Nuxt.js-00DC82.svg?style=for-the-badge&logo=nuxtdotjs&logoColor=white" alt="nuxtjs">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/Vue.js-4FC08D.svg?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="vuejs">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/Astro-BC52EE.svg?style=for-the-badge&logo=Astro&logoColor=white" alt="astro">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/PostgreSQL-4169E1.svg?style=for-the-badge&logo=PostgreSQL&logoColor=white" alt="postgresql">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/MySQL-4479A1.svg?style=for-the-badge&logo=MySQL&logoColor=white" alt="mysql">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/Prisma-2D3748.svg?style=for-the-badge&logo=Prisma&logoColor=white" alt="prisma">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/Sequelize-52B0E7.svg?style=for-the-badge&logo=Sequelize&logoColor=white" alt="Sequelize">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/Typeorm-52B0E7.svg?style=for-the-badge&logo=Typeorm&logoColor=white" alt="Typeorm">
+                    <img class="badge rounded-md hover:opacity-100" src="https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white" alt="Docker">
                 </div>
             </div>
 
@@ -135,6 +135,8 @@ const {title, description} = Astro.props;
     </script>
 
     <script>
+        import anime from 'animejs';
+
         const el = document.getElementById('typing_name');
         const typing = 'Mathéo Boulanger';
         let i = 0;
@@ -164,6 +166,13 @@ const {title, description} = Astro.props;
         }
 
         type();
+
+        anime({
+            targets: '.badge',
+            translateY: [20, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(200, {start: 100}),
+        });
     </script>
 </html>
 
